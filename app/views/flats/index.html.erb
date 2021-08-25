@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+
+      <% @flats.each do |flat| %>
+
+        <div class="col col-12 col-md-6 col-lg-4">
+          <div class="card-trip">
+            <%= link_to flat_path(flat.id), method: :get, class: '' do %>
+
+                  <%= image_tag flat.img_url, alt: "", class: "card-trip-image" %>
+                  <div class="card-trip-footer">
+                    <div class="truncate">
+                      <h2 class="truncate"><%= flat.name %></h2>
+                      <p class="truncate"><%= flat.description %></p>
+                    </div>
+                    <div class="d-flex">
+                      <div>
+                        <i class="fas fa-user-friends align-middle m-2"></i>
+                      </div>
+                      <h2 class="m-2">
+                        <%= flat.number_of_guests %>
+                      </h2>
+                      <h2 class="m-2">€<%= flat.price_per_night %></h2>
+                    </div>
+                    <img src="https://picsum.photos/50/50" alt="" class="avatar">
+                  </div>
+
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for(@flat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :number_of_guests %>
+    <%= f.input :price_per_night %>
+    <%= f.input :img_url, html: {value: "https://picsum.photos/1000/500"} %>
+    <%= f.submit :submit, class: 'btn btn-primary mt-3 text-white' %>
+  <% end %>
+  <%= link_to 'Go back', flats_path, class: "btn btn-primary mt-3 text-white"%>
+</div>
